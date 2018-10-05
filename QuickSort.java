@@ -8,39 +8,39 @@ public class QuickSort {
     }
   }
 
-  private static int[] quicksort(int items[], int left, int right) {
+  private static int[] quicksort(int table[], int to_left, int to_right) {
   	int i, j;
-  	int pivot, temp;
-  	i = left;
-  	j = right;
-  	pivot = items[(left + right) / 2];
+  	int pivot, temporary;
+  	i = to_left;
+  	j = to_right;
+  	pivot = table[(to_left + to_right) / 2];
 
   	do {
-  		while ((items[i] < pivot) && (i < right)) {
+  		while ((table[i] < pivot) && (i < to_right)) {
   		  i++;
   		}
 
-  		while ((pivot < items[j]) && (j > left))	{
+  		while ((pivot < table[j]) && (j > to_left))	{
   		  j--;
   		}
 
   		if (i <= j) {
-    		temp = items[i];
-    		items[i] = items[j];
-    		items[j] = temp;
+    		temporary = table[i];
+    		table[i] = table[j];
+    		table[j] = temporary;
     		i++;
     		j--;
   		}
   	} while (i <= j);
 
-  	if (left < j) {
-  	  items = quicksort(items, left, j);
+  	if (to_left < j) {
+  	  table = quicksort(table, to_left, j);
   	}
 
-  	if (i < right) {
-  		items = quicksort(items, i, right);
+  	if (i < to_right) {
+  		table = quicksort(table, i, to_right);
   	}
 
-    return items;
+    return table;
   }
 }
