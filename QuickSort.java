@@ -1,6 +1,6 @@
 public class QuickSort {
   public static void main(String args[]) {
-    int[] table = {125, 365, 458, 654, 216, 975, 123};
+    int[] table = {125, 365, 458, 654, 216, 975, 123, 12033, 65494, 120, 641321, 7851, 12, 13651, 1567, 4518, 13641, 1234, 4658, 9854, 1320, 1206};
     table = quicksort(table, 0, table.length - 1);
 
     for(int i = 0; i < table.length; i++) {
